@@ -55,4 +55,3 @@ function buildVO() {
     hideSpinner("voSpinner");
   }, 1000);
 }
-
