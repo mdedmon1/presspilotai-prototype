@@ -14,8 +14,7 @@ function getTimeStamp() {
 function assignTask() {
   showSpinner("assignSpinner");
   setTimeout(() => {
-    const statusMsg = `[${getTimeStamp()}] ✅ Field Team Assigned: Sarah to Brunswick`;
-    document.getElementById("status").innerText = statusMsg;
+    document.getElementById("status").innerText = `[${getTimeStamp()}] ✅ Field Team Assigned: Sarah to Brunswick`;
     hideSpinner("assignSpinner");
   }, 1000);
 }
@@ -23,14 +22,8 @@ function assignTask() {
 function generateScript() {
   showSpinner("scriptSpinner");
   setTimeout(() => {
-    const output = `
-      <p>[${getTimeStamp()}] 🎤 Script Generated:</p>
-      <pre>
-Anchor: Good afternoon. We begin with breaking news — a Category 4 hurricane has made landfall along the Georgia coast.
-Winds exceeding 85 mph have left widespread destruction.
-We go now to Brunswick, where our field team is live with the latest.
-      </pre>`;
-    document.getElementById("scriptOutput").innerHTML = output;
+    document.getElementById("scriptOutput").innerText =
+      `[${getTimeStamp()}] 🎤 Script: Good afternoon. A Category 4 hurricane has slammed into the Georgia coastline, causing widespread flooding and power outages. We now go live to our correspondent in Brunswick.`;
     hideSpinner("scriptSpinner");
   }, 1000);
 }
@@ -38,8 +31,8 @@ We go now to Brunswick, where our field team is live with the latest.
 function showVerified() {
   showSpinner("verifiedSpinner");
   setTimeout(() => {
-    const output = `[${getTimeStamp()}] 📡 Verified Info: Reuters confirms 1M+ without power. AP reports 85 mph sustained winds.`;
-    document.getElementById("verifiedOutput").innerText = output;
+    document.getElementById("verifiedOutput").innerText =
+      `[${getTimeStamp()}] 📰 AP Verified: More than 1.2 million people are without power across Georgia and South Carolina, AP confirms. Emergency declarations have been issued in 6 counties.`;
     hideSpinner("verifiedSpinner");
   }, 1000);
 }
@@ -47,11 +40,8 @@ function showVerified() {
 function buildVO() {
   showSpinner("voSpinner");
   setTimeout(() => {
-    const output = `[${getTimeStamp()}] 🎬 VO Ready: Scenes of flooded streets, downed power lines, and families evacuated by boat.`;
-    document.getElementById("voOutput").innerText = output;
-    const img = document.getElementById("voImage");
-    img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Hurricane_damage.jpg/640px-Hurricane_damage.jpg";
-    img.style.display = "block";
+    document.getElementById("voOutput").innerText =
+      `[${getTimeStamp()}] 🎬 VO: Picture of destruction — collapsed roofs, waist-high water, and families wading through flooded neighborhoods.`;
     hideSpinner("voSpinner");
   }, 1000);
 }
