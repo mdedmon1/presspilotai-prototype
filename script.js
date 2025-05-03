@@ -1,48 +1,65 @@
-function showSpinner(id) {
-  document.getElementById(id).style.display = "inline-block";
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 20px;
+  background: #f4f4f4;
 }
 
-function hideSpinner(id) {
-  document.getElementById(id).style.display = "none";
+header {
+  background: #c62828;
+  color: white;
+  padding: 10px;
 }
 
-function getTimeStamp() {
-  const now = new Date();
-  return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+.alert, .editorial, .verified, .vo, .assignment {
+  background: white;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-function assignTask() {
-  showSpinner("assignSpinner");
-  setTimeout(() => {
-    const statusMsg = `[${getTimeStamp()}] ✅ Field Team Assigned: Sarah to Brunswick`;
-    document.getElementById("status").innerText = statusMsg;
-    hideSpinner("assignSpinner");
-  }, 1000);
+button {
+  background-color: #1976d2;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-function generateScript() {
-  showSpinner("scriptSpinner");
-  setTimeout(() => {
-    const output = `[${getTimeStamp()}] 🎤 Script Generated: A powerful hurricane has slammed into Georgia, leaving a trail of destruction as emergency crews begin rescue operations.`;
-    document.getElementById("scriptOutput").innerText = output;
-    hideSpinner("scriptSpinner");
-  }, 1000);
+button:hover {
+  background-color: #1257a0;
 }
 
-function showVerified() {
-  showSpinner("verifiedSpinner");
-  setTimeout(() => {
-    const output = `[${getTimeStamp()}] 📡 Verified Info: Reuters confirms 1M+ without power. AP reports 85 mph sustained winds.`;
-    document.getElementById("verifiedOutput").innerText = output;
-    hideSpinner("verifiedSpinner");
-  }, 1000);
+.spinner {
+  display: none;
+  margin-top: 10px;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #1976d2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-function buildVO() {
-  showSpinner("voSpinner");
-  setTimeout(() => {
-    const output = `[${getTimeStamp()}] 🎬 VO Ready: Scenes of flooded streets, downed power lines, and families evacuated by boat.`;
-    document.getElementById("voOutput").innerText = output;
-    hideSpinner("voSpinner");
-  }, 1000);
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
+
+p {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  font-family: monospace;
+  color: #333;
+}
+
+.script-box pre {
+  background: #f0f0f0;
+  padding: 10px;
+  border-left: 4px solid #1976d2;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+  
