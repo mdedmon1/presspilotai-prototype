@@ -54,3 +54,12 @@ p {
   color: #333;
 }
 
+.script-box pre {
+  background: #f0f0f0;
+  padding: 10px;
+  border-left: 4px solid #1976d2;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+
