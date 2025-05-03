@@ -1,65 +1,59 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 20px;
-  background: #f4f4f4;
+function showSpinner(id) {
+  document.getElementById(id).style.display = "inline-block";
 }
 
-header {
-  background: #c62828;
-  color: white;
-  padding: 10px;
+function hideSpinner(id) {
+  document.getElementById(id).style.display = "none";
 }
 
-.alert, .editorial, .verified, .vo, .assignment {
-  background: white;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+function getTimeStamp() {
+  const now = new Date();
+  return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
-button {
-  background-color: #1976d2;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+function assignTask() {
+  showSpinner("assignSpinner");
+  setTimeout(() => {
+    const statusMsg = `[${getTimeStamp()}] ✅ Field Team Assigned: Sarah to Brunswick`;
+    document.getElementById("status").innerText = statusMsg;
+    hideSpinner("assignSpinner");
+  }, 1000);
 }
 
-button:hover {
-  background-color: #1257a0;
+function generateScript() {
+  showSpinner("scriptSpinner");
+  setTimeout(() => {
+    const output = `
+      <p>[${getTimeStamp()}] 🎤 Script Generated:</p>
+      <pre>
+Anchor: Good afternoon. We begin with breaking news — a Category 4 hurricane has made landfall along the Georgia coast.
+Winds exceeding 85 mph have left widespread destruction.
+We go now to Brunswick, where our field team is live with the latest.
+      </pre>`;
+    document.getElementById("scriptOutput").innerHTML = output;
+    hideSpinner("scriptSpinner");
+  }, 1000);
 }
 
-.spinner {
-  display: none;
-  margin-top: 10px;
-  width: 24px;
-  height: 24px;
-  border: 4px solid #ccc;
-  border-top: 4px solid #1976d2;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+function showVerified() {
+  showSpinner("verifiedSpinner");
+  setTimeout(() => {
+    const output = `[${getTimeStamp()}] 📡 Verified Info: Reuters confirms 1M+ without power. AP reports 85 mph sustained winds.`;
+    document.getElementById("verifiedOutput").innerText = output;
+    hideSpinner("verifiedSpinner");
+  }, 1000);
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+function buildVO() {
+  showSpinner("voSpinner");
+  setTimeout(() => {
+    const output = `[${getTimeStamp()}] 🎬 VO Ready: Scenes of flooded streets, downed power lines, and families evacuated by boat.`;
+    document.getElementById("voOutput").innerText = output;
+    const img = document.getElementById("voImage");
+    img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Hurricane_damage.jpg/640px-Hurricane_damage.jpg";
+    img.style.display = "block";
+    hideSpinner("voSpinner");
+  }, 1000);
 }
 
-p {
-  font-size: 0.95rem;
-  margin-top: 10px;
-  font-family: monospace;
-  color: #333;
-}
-
-.script-box pre {
-  background: #f0f0f0;
-  padding: 10px;
-  border-left: 4px solid #1976d2;
-  font-family: monospace;
-  white-space: pre-wrap;
-}
-
-  
+ 
