@@ -9,10 +9,13 @@
   <header>
     <h1>🚨 Breaking Feed</h1>
   </header>
+
   <section class="alert">
     <p><strong>ALERT:</strong> Category 4 Hurricane has made landfall in coastal Georgia.</p>
     <button onclick="assignTask()">Assign Field Team</button>
+    <div id="assignSpinner" class="spinner"></div>
   </section>
+
   <section class="editorial">
     <h2>Suggested Angles</h2>
     <ul>
@@ -20,11 +23,31 @@
       <li>Infrastructure Collapse</li>
       <li>Climate Policy Reactions</li>
     </ul>
+    <button onclick="generateScript()">Generate Script</button>
+    <div id="scriptSpinner" class="spinner"></div>
+    <p id="scriptOutput"></p>
   </section>
+
+  <section class="verified">
+    <h2>Verified Information</h2>
+    <button onclick="showVerified()">View AP/Reuters Info</button>
+    <div id="verifiedSpinner" class="spinner"></div>
+    <p id="verifiedOutput"></p>
+  </section>
+
+  <section class="vo">
+    <h2>VO Builder</h2>
+    <button onclick="buildVO()">Build VO</button>
+    <div id="voSpinner" class="spinner"></div>
+    <p id="voOutput"></p>
+  </section>
+
   <section class="assignment">
     <h2>Assignment Tracker</h2>
     <p id="status">Status: Waiting for assignment...</p>
   </section>
+
   <script src="script.js"></script>
 </body>
 </html>
+
